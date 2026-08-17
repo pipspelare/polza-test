@@ -4,7 +4,7 @@ docker compose up -d --build
 
 pip install -r requirements.txt
 
-python load_data.py
+python3 load_data.py
 
 docker compose exec -T postgres psql -U app -d companies  < queries.sql
 
