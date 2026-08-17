@@ -6,6 +6,7 @@ pip install -r requirements.txt
 
 python3 load_data.py
 
+##### *запросы из первого задания ⬇️
 docker compose exec -T postgres psql -U app -d companies  < queries.sql
 
 cd web
