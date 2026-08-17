@@ -243,49 +243,49 @@ c_001091
 Они не являются компаниями и должны быть пропущены.
 
 
-###### Методы
+## Методы
 
-## Через LLM. По-хорошему надо написать валидатор для некорректных кодировок,
-## а некорректность данных проверять на этапе ввода на стороне сервера, чтобы исключить
-## возможность редактирования на стороне клиента
+ Через LLM. По-хорошему надо написать валидатор для некорректных кодировок,
+ а некорректность данных проверять на этапе ввода на стороне сервера, чтобы исключить
+ возможность редактирования на стороне клиента
 
 ## Дубликаты
 
-SELECT id, COUNT(*)
-FROM review_companies
-WHERE id IS NOT NULL
-GROUP BY id
-HAVING COUNT(*) > 1
-ORDER BY COUNT(*) DESC, id;
+SELECT id, COUNT(*)  
+FROM review_companies  
+WHERE id IS NOT NULL  
+GROUP BY id  
+HAVING COUNT(*) > 1  
+ORDER BY COUNT(*) DESC, id;  
 
 ## Некорректные рейтинги
 
-SELECT source_row, id, rating_raw
-FROM review_companies
-WHERE rating_raw IS NOT NULL
-  AND (
-      rating_raw = 'N/A'
-      OR rating_raw !~ '^[0-9]+([.,][0-9]+)?$'
-      OR replace(rating_raw, ',', '.')::numeric NOT BETWEEN 0 AND 5
-  );
+SELECT source_row, id, rating_raw  
+FROM review_companies  
+WHERE rating_raw IS NOT NULL  
+  AND (  
+      rating_raw = 'N/A'  
+      OR rating_raw !~ '^[0-9]+([.,][0-9]+)?$'  
+      OR replace(rating_raw, ',', '.')::numeric NOT BETWEEN 0 AND 5  
+  );  
 
 ## Количество отзывов
 
-SELECT source_row, id, reviews_count_raw
-FROM review_companies
-WHERE reviews_count_raw IS NOT NULL
-  AND (
-      reviews_count_raw !~ '^[0-9]+$'
-      OR reviews_count_raw::integer < 0
-  );
+SELECT source_row, id, reviews_count_raw  
+FROM review_companies  
+WHERE reviews_count_raw IS NOT NULL  
+  AND (  
+      reviews_count_raw !~ '^[0-9]+$'  
+      OR reviews_count_raw::integer < 0  
+  );  
 
 ## подозрительные сайты
 
-SELECT source_row, id, site_raw
-FROM review_companies
-WHERE site_raw IS NOT NULL
-  AND (
-      site_raw IN ('нет сайта', 'https://')
-      OR site_raw NOT LIKE 'http%'
-      OR site_raw LIKE '[%'
-  );
+SELECT source_row, id, site_raw  
+FROM review_companies  
+WHERE site_raw IS NOT NULL  
+  AND (  
+      site_raw IN ('нет сайта', 'https://')  
+      OR site_raw NOT LIKE 'http%'  
+      OR site_raw LIKE '[%'  
+  );  
