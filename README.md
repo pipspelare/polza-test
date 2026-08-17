@@ -13,6 +13,9 @@ cd web
 
 npm install
 
+##### *в prod'e так не буду делать :) ⬇️
+cat .env.example > .env.local 
+
 npm run dev
 
 ## Задача 2
