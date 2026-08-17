@@ -1,0 +1,168 @@
+.page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.backLink {
+  color: #596579;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 32px 0 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #536dfe;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #778197;
+}
+
+.filters {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.filters label {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  color: #606c80;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filters input,
+.filters select {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d9dfeb;
+  border-radius: 8px;
+  background: white;
+  color: #172033;
+  font: inherit;
+}
+
+.filters button {
+  min-height: 42px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: #536dfe;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.reset {
+  padding-bottom: 12px;
+  color: #536dfe;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  background: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #edf0f5;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table th {
+  background: #fafbfe;
+  color: #778197;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.companyName {
+  font-weight: 700;
+}
+
+.companyId {
+  margin-top: 5px;
+  color: #9aa4b5;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.siteLink {
+  color: #536dfe;
+  text-decoration: none;
+}
+
+.empty {
+  padding: 48px;
+  color: #778197;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 28px 16px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .reset {
+    padding: 10px 0 0;
+  }
+}
