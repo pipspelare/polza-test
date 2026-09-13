@@ -10,7 +10,6 @@ cd web
 
 npm install
 
-##### :)
 cat .env.example > .env.local 
 
 npm run dev
